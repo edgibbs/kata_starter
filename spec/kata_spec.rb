@@ -1,15 +1,12 @@
 require "spec_helper"
 
 describe Kata do
-  describe "#build" do
-    let(:output) { StringIO.new }
-    let(:kata) { Kata.new(output) }
+  let(:kata) { Kata.new }
 
-    context "help" do
-      it "displays a help message" do
-        kata.help
-        output.string.chomp.should == "Please run build to setup a project"
-      end
+  describe "@help" do
+    it "displays a help message" do
+      STDOUT.should_receive(:puts).with("Please run build to setup a project")
+      kata.help
     end
   end
 end
