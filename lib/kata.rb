@@ -8,7 +8,7 @@ class Kata < Thor
     puts "Please run build to setup a project"
   end
 
-  desc "build", "builds a new base kata directory"
+  desc "build KATA_NAME", "builds a new base kata directory"
   def build kata_name
     FileUtils.mkdir kata_name
   end
