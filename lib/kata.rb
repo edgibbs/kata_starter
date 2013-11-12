@@ -11,5 +11,7 @@ class Kata < Thor
   desc "build KATA_NAME", "builds a new base kata directory"
   def build kata_name
     FileUtils.mkdir kata_name
+    FileUtils.mkdir "#{kata_name}/lib"
+    FileUtils.mkdir "#{kata_name}/spec"
   end
 end

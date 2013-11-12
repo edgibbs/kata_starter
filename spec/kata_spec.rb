@@ -11,8 +11,14 @@ describe Kata do
   end
 
   describe "#build" do
-    it "creates a new directory" do
+    before do
+      FileUtils.stub(:mkdir)
+    end
+
+    it "creates new directories" do
       FileUtils.should_receive(:mkdir).with("sample_kata")
+      FileUtils.should_receive(:mkdir).with("sample_kata/lib")
+      FileUtils.should_receive(:mkdir).with("sample_kata/spec")
       kata.build "sample_kata"
     end
   end
