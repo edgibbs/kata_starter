@@ -13,5 +13,9 @@ class Kata < Thor
     FileUtils.mkdir kata_name
     FileUtils.mkdir "#{kata_name}/lib"
     FileUtils.mkdir "#{kata_name}/spec"
+
+    ruby_version_file = File.new(".ruby-version", "w")
+    ruby_version_file.puts("ruby-1.9.3-p392")
+    ruby_version_file.close
   end
 end
