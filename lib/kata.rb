@@ -14,12 +14,12 @@ class Kata < Thor
     FileUtils.mkdir "#{kata_name}/lib"
     FileUtils.mkdir "#{kata_name}/spec"
 
-    ruby_version_file = File.new(".ruby-version", "w")
+    ruby_version_file = File.new("#{kata_name}/.ruby-version", "w")
     ruby_version_file.puts("ruby-1.9.3-p392")
     ruby_version_file.close
 
 
-    gemfile = File.new("Gemfile", "w")
+    gemfile = File.new("#{kata_name}/Gemfile", "w")
     gemfile_contents = <<-CONTENT
 source "http://rubygems.org"
 
