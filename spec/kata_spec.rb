@@ -13,7 +13,7 @@ describe Kata do
 
   describe "#build" do
     before do
-      FileUtils.stub(:mkdir)
+      FileUtils.stub :mkdir
       File.stub(:new).and_return(StringIO.new, StringIO.new, StringIO.new)
     end
 
@@ -42,7 +42,7 @@ describe Kata do
       end
 
       it "closes the file" do
-        ruby_version_file.should_receive(:close)
+        ruby_version_file.should_receive :close
         kata.build kata_name
       end
     end
@@ -68,7 +68,7 @@ describe Kata do
       end
 
       it "closes the file" do
-        gemfile.should_receive(:close)
+        gemfile.should_receive :close
         kata.build kata_name
       end
     end
@@ -94,7 +94,7 @@ describe Kata do
       end
 
       it "closes the file" do
-        spec_helper_file.should_receive(:close)
+        spec_helper_file.should_receive :close
         kata.build kata_name
       end
     end
