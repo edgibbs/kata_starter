@@ -30,5 +30,17 @@ gem "debugger"
 
     gemfile.puts(gemfile_contents)
     gemfile.close
+
+    spec_helper_file = File.new("#{kata_name}/spec/spec_helper.rb", "w")
+    spec_helper_contents = <<-CONTENT
+require "rspec-given"
+
+Dir[File.join(".", "lib", "**/*.rb")].each do |file|
+  require file
+end
+    CONTENT
+
+    spec_helper_file.puts(spec_helper_contents)
+    spec_helper_file.close
   end
 end

@@ -72,5 +72,31 @@ describe Kata do
         kata.build kata_name
       end
     end
+
+    context "creates a spec helper" do
+      let(:spec_helper_file) { StringIO.new }
+
+      before do
+        File.stub(:new).with("#{kata_name}/spec/spec_helper.rb", "w").and_return(spec_helper_file)
+      end
+
+      it "adds a spec helper" do
+        File.should_receive(:new).with("#{kata_name}/spec/spec_helper.rb", "w")
+        kata.build kata_name
+      end
+
+      it "writes the content to the spec helper" do
+        kata.build kata_name
+        spec_helper_file.string.should include 'require "rspec-given"'
+        spec_helper_file.string.should include 'Dir[File.join(".", "lib", "**/*.rb")].each do |file|'
+        spec_helper_file.string.should include 'require file'
+        spec_helper_file.string.should include 'end'
+      end
+
+      it "closes the file" do
+        spec_helper_file.should_receive(:close)
+        kata.build kata_name
+      end
+    end
   end
 end
