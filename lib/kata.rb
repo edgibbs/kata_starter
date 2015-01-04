@@ -37,7 +37,6 @@ source "http://rubygems.org"
 
 gem "rspec"
 gem "rspec-given"
-gem "debugger"
     CONTENT
     gemfile.puts gemfile_contents
     gemfile.close

@@ -64,7 +64,6 @@ describe Kata do
         gemfile.string.should include 'source "http://rubygems.org"'
         gemfile.string.should include 'gem "rspec"'
         gemfile.string.should include 'gem "rspec-given"'
-        gemfile.string.should include 'gem "debugger"'
       end
 
       it "closes the file" do
