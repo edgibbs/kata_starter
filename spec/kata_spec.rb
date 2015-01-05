@@ -63,7 +63,6 @@ describe Kata do
         kata.build kata_name
         gemfile.string.should include 'source "http://rubygems.org"'
         gemfile.string.should include 'gem "rspec"'
-        gemfile.string.should include 'gem "rspec-given"'
       end
 
       it "closes the file" do
@@ -86,7 +85,6 @@ describe Kata do
 
       it "writes the content to the spec helper" do
         kata.build kata_name
-        spec_helper_file.string.should include 'require "rspec-given"'
         spec_helper_file.string.should include 'Dir[File.join(".", "lib", "**/*.rb")].each do |file|'
         spec_helper_file.string.should include 'require file'
         spec_helper_file.string.should include 'end'

@@ -11,7 +11,7 @@ To use this thor program you must do the following:
 * Run:
   thor kata:help
 
-Assumptions are that you are using ruby 2.0, rspec-given, rvm, and a default spec_helper for your katas.  These can all be updated simply by updating the kata.rb file and its specs whenever an update is needed.  You then run:
+Assumptions are that you are using ruby 2.0, rvm, and a default spec_helper for your katas.  These can all be updated simply by updating the kata.rb file and its specs whenever an update is needed.  You then run:
 
   thor update kata
 

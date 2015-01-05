@@ -36,7 +36,6 @@ class Kata < Thor
 source "http://rubygems.org"
 
 gem "rspec"
-gem "rspec-given"
     CONTENT
     gemfile.puts gemfile_contents
     gemfile.close
@@ -45,8 +44,6 @@ gem "rspec-given"
   def create_spec_helper_file kata_name
     spec_helper_file = File.new "#{kata_name}/spec/spec_helper.rb", "w"
     spec_helper_contents = <<-CONTENT
-require "rspec-given"
-
 Dir[File.join(".", "lib", "**/*.rb")].each do |file|
   require file
 end
