@@ -26,7 +26,7 @@ class Kata < Thor
 
   def create_ruby_version_file kata_name
     ruby_version_file = File.new "#{kata_name}/.ruby-version", "w"
-    ruby_version_file.puts "ruby-2.0.0-p247"
+    ruby_version_file.puts "ruby-2.2.0"
     ruby_version_file.close
   end
 

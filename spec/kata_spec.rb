@@ -38,7 +38,7 @@ describe Kata do
 
       it "writes the version to the file" do
         kata.build kata_name
-        ruby_version_file.string.chomp.should == "ruby-2.0.0-p247"
+        ruby_version_file.string.chomp.should == "ruby-2.2.0"
       end
 
       it "closes the file" do
