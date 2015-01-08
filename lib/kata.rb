@@ -36,6 +36,7 @@ class Kata < Thor
 source "http://rubygems.org"
 
 gem "rspec"
+gem "yertle_formatter"
     CONTENT
     gemfile.puts gemfile_contents
     gemfile.close

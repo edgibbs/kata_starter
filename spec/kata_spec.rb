@@ -63,6 +63,7 @@ describe Kata do
         kata.build kata_name
         gemfile.string.should include 'source "http://rubygems.org"'
         gemfile.string.should include 'gem "rspec"'
+        gemfile.string.should include 'gem "yertle_formatter"'
       end
 
       it "closes the file" do
